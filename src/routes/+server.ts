@@ -1,8 +1,8 @@
 import type { RequestHandler } from './$types';
-import getDate from '$lib/get-date';
+import { logger } from '$lib/pino';
 
 export const GET: RequestHandler = async () => {
-	const serverDate = getDate();
+	logger.info('/');
 
-	return new Response(JSON.stringify({ serverDate }));
+	return new Response('/');
 };
